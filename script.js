@@ -33,7 +33,7 @@ function showLetter() {
 
   if (music && music.paused) {
     music.play().catch((e) => {
-      console.log("No se pudo reproducir la música automáticamente:", e);
+      console.log("El navegador bloqueó la reproducción automática:", e);
     });
   }
 }

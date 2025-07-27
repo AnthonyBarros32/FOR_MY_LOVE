@@ -66,15 +66,16 @@ h1 {
 }
 
 .letter {
+  display: none;       /* Oculta inicialmente */
+  opacity: 0;
+  transform: translateY(30px);  /* Empieza un poco abajo */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  /* Otros estilos que ya tienes */
   margin-top: 20px;
   padding: 20px;
   background: #f9ecff;
   border-radius: 12px;
-  display: none;
   text-align: left;
-  animation: fadeIn 1s ease-in-out;
-  opacity: 0;
-  transition: opacity 1s ease;
   font-family: 'Great Vibes', cursive;
   font-size: 1.8rem;
   color: #6a3f7b;
@@ -85,6 +86,7 @@ h1 {
 .letter.show {
   display: block;
   opacity: 1;
+  transform: translateY(0);
 }
 
 .letter h2 {
