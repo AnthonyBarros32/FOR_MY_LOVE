@@ -165,3 +165,98 @@ h1 {
     transform: translateY(120vh) rotate(360deg);
   }
 }
+
+.photo-hangar {
+  position: relative;
+  max-width: 900px;
+  margin: 50px auto 0;
+  padding-top: 50px; /* espacio para la cuerda */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.photo-hangar::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background: linear-gradient(90deg, #b293e5, #7a3ab9);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.photo {
+  position: relative;
+  width: 150px;
+  height: 200px;
+  background: #fff0ff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transform-origin: top center;
+  animation: swing 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+.photo:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.photo:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.photo:nth-child(3) {
+  animation-delay: 3s;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Pinza simulada */
+.clip {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  background: #8a2be2;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 4px 10px rgba(138, 43, 226, 0.5);
+  z-index: 3;
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-hangar {
+    flex-direction: column;
+    padding-top: 0;
+    gap: 40px;
+  }
+
+  .photo-hangar::before {
+    display: none;
+  }
+
+  .photo {
+    width: 80vw;
+    height: 110vw;
+    animation: none;
+  }
+}
