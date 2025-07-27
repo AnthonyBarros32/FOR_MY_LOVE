@@ -1,0 +1,165 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #e8d7f1, #fdf6fd);
+  color: #5c2563;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #fff0ff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2rem;
+  color: #8a2be2;
+}
+
+#daily-message {
+  font-size: 1.1rem;
+  margin: 10px 0 20px 0;
+}
+
+.map-section {
+  position: relative;
+  margin: 30px 0;
+}
+
+.map {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.plane {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  font-size: 1.5rem;
+  animation: fly 20s linear infinite;
+}
+
+@keyframes fly {
+  0% { left: 0%; }
+  100% { left: 90%; }
+}
+
+.btn-letter {
+  background-color: #8a2be2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-letter:hover {
+  background-color: #6b1cbb;
+}
+
+.letter {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f9ecff;
+  border-radius: 12px;
+  display: none;
+  text-align: left;
+  animation: fadeIn 1s ease-in-out;
+  opacity: 0;
+  transition: opacity 1s ease;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: #6a3f7b;
+  line-height: 1.6;
+  box-shadow: 0 4px 12px rgba(106, 63, 123, 0.2);
+}
+
+.letter.show {
+  display: block;
+  opacity: 1;
+}
+
+.letter h2 {
+  color: #7b1fa2;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.music {
+  margin-top: 30px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.butterfly {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: flyUp 15s linear infinite;
+  z-index: 2;
+}
+
+/* Mariposa 1 */
+.butterfly1 {
+  left: 10%;
+  background-image: url('but1.png'); /* o img/but1.png si está en carpeta */
+  animation-delay: 0s;
+}
+
+/* Mariposa 2 */
+.butterfly2 {
+  left: 50%;
+  background-image: url('but2.png');
+  animation-delay: 5s;
+}
+
+/* Mariposa 3 */
+.butterfly3 {
+  left: 80%;
+  background-image: url('but3.png');
+  animation-delay: 10s;
+}
+
+@keyframes flyUp {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(30px) rotate(360deg);
+    opacity: 0;
+  }
+}
+.floating-butterfly {
+  position: absolute;
+  width: 40px;
+  opacity: 0.7;
+  animation: floatDown linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+  }
+}
